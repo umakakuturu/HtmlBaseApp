@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex; /* Enable flexbox layout */
+    align-items: center; /* Center the form-box vertically */
+    justify-content: center; /* Center the form-box horizontally */
+}
+
+
+.form-box {
+    width: 90%; /* Set a fixed width for the form-box */
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 50px 60px 70px;
+    text-align: center
+}
+
+
+.form-box h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #3c00a0;
+  position: relative;
+}

@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Sign Up Form</title>
+    <!-- Linking css code file -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+<div class="container">
+    <div class="form-box">
+        <h1 id="title">Sign Up</h1>
+        <form>
+            <div class="input-group">
+                <div class="input-field" id="nameField">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Name">
+                </div>
+
+                <div class="input-field" >
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email">
+                    <div id="status"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+
+
+                <p>Forgot Password <a href="#">Click Here!</a></p>
+
+            </div>
+            <div class="btn-field">
+                <button type="button" id="signUpBtn">sign Up</button>
+                <button type="button" id="signInBtn" class="disable">sign In</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+    let signUpBtn = document.getElementById("signUpBtn");
+    let signInBtn = document.getElementById("signInBtn");
+
+    let nameField = document.getElementById("nameField");
+
+    let title = document.getElementById("title");
+    let email = document.getElementById("email");
+    let status = document.getElementById("status");
+
+    email.addEventListener("focus", function() {
+        if (email.value == '') {
+            status.innerHTML = "not typing";
+        } else {
+            status.innerHTML = "typing";
+        }
+    });
+
+    email.addEventListener("input", function() {
+        if (email.value == '') {
+            status.innerHTML = "not typing";
+        } else {
+            status.innerHTML = "typing";
+        }
+    });
+
+    email.addEventListener("blur", function() {
+        status.innerHTML = "";
+    });
+
+
+    signInBtn.onclick = function () {
+        nameField.style.maxHeight = "0";
+        title.innerHTML = "sign In";
+        signUpBtn.classList.add("disable");
+        signInBtn.classList.remove("disable");
+    }
+
+    signUpBtn.onclick = function () {
+        nameField.style.maxHeight = "60Px";
+        title.innerHTML = "sign Up";
+        signUpBtn.classList.remove("disable");
+        signInBtn.classList.add("disable");
+    }
+
+
+</script>
+</body>
+</html>
